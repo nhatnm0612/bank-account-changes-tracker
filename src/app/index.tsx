@@ -54,7 +54,7 @@ export default function Index() {
   const resultIsSuccess = hasResult && regexResult !== "No groups";
 
   const testRegex = () => {
-    const regex = new RegExp(regexString);
+    const regex = new RegExp(regexString, "s");
     const groups = notificationMessage?.match(regex)?.groups;
     const accountChangeData = new AccountChange(groups || {});
     setRegexResult(groups ? JSON.stringify(accountChangeData) : "No groups");
